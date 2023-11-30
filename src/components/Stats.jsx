@@ -1,11 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export default function Stats() {
+
+  const depenses = useSelector(state => state.depenses)
+  const budget = useSelector(state => state.budget)
+  const som = depenses.reduce((s,d) => s+d.montant, 0)
   return (
     <div className='stats'>
-        <div>Budget : {0}</div>
-        <div>Depenses : {0}</div>
-        <div>Ecart : {0}</div>
+        <div>Budget : {budget}</div>
+        <div>Depenses : {som}</div>
+        <div>Ecart : {budget-som}</div>
         
     </div>
   )

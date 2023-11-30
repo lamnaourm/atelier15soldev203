@@ -17,7 +17,6 @@ function App() {
         </div>
         <ListDepenses />
       </div>
-
     </div>
   );
 }
